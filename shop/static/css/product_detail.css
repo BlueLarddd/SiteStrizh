@@ -1,0 +1,30 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    flex-direction: column;
+    margin-inline: 20%;
+    gap: 25px;
+}
+
+.container-head {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 35px;
+}
+
+.product-image {
+    width: 250px;
+    height: 250px;
+    object-fit: contain;
+}
+
+.product-main-text-view {
+    margin-top: -10px;
+    padding-left: 30px;
+    background-image: url("../images/view.svg");
+    background-position: left center;
+    background-size: 20px 20px;
+    background-repeat: no-repeat;
+}

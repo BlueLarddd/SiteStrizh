@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% block css_styles %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/order_processed.css' %}">
+{% endblock %}
+
+{% block title %} Заказ оформлен {% endblock %}
+
+{% block content %}
+    <div class="container">
+        <h1 class="cart-title-name">Заказ оформлен</h1>
+    </div>
+    <div class="cart-list">
+        {% for item in ordered_items %}
+            {% with product=item.product %}
+                <div class="container-list-item">
+                    <img class="container-list-item-image" src="{{ product.image.url }}">
+                    <a class="container-list-item-name"
+                       href="{{ product.get_absolute_url }}">{{ product }}</a>
+                    <p>Штук: {{ item.quantity }}</p>
+                    <p class="container-list-item-price">Всего: {{ item.total_price }} p.</p>
+                </div>
+            {% endwith %}
+        {% endfor %}
+    </div>
+{% endblock %}

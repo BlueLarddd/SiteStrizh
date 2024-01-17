@@ -1,0 +1,42 @@
+.content {
+    justify-content: center;
+    align-items: center;
+}
+
+.product-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-gap: 15px;
+    padding-inline: 20%;
+    justify-content: center;
+}
+
+.product-card {
+    background: #ffffff;
+    color: black;
+    padding: 10px;
+    padding-inline: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    text-decoration: none;
+}
+
+.product-card-title {
+
+}
+
+.product-card-image {
+    width: 150px;
+    height: 150px;
+}
+
+.not-found {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    width: 100%;
+}

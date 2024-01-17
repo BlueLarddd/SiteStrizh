@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% block css_styles %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}">
+{% endblock %}
+
+{% block title %} Triumph Sports Network {% endblock %}
+
+{% block content %}
+    <div class="about">
+        <div class="about-text">
+            <h2 class="about-text-title">О нас</h2>
+            <p class="about-text-description">В производстве наших десертов мы используем только натуральные продукты. Свежие ягоды с домашней грядки, фермерское молоко и творог, настоящую мексиканскую ваниль и лучший бельгийский шоколад. Никаких заменителей и консервантов.
+
+Мы сделали атмосферу кафе
+по домашнему уютной и гостеприимной, там где приятно покушать наши десерты.
+
+Закажите ваши любимые десерты онлайн или приходите в кафе для семейных встреч или дружеских посиделок..</p>
+        </div>
+        <img class="about-image" src="{% static 'images/cup.svg' %}" alt="">
+    </div>
+    <div class="popular">
+        <h2 class="popular-title">Часто заказываемые товары</h2>
+        <div class="popular-catalog">
+            {% for popular_product in popular_products %}
+                <a href="{{ popular_product.get_absolute_url }}" class="product-card">
+                    {% if popular_product.image %}
+                        <img class="product-card-image" src="{{ popular_product.image.url }}" alt="">
+                    {% else %}
+                        <img class="product-card-image" src="{% static 'images/no_image.svg' %}" alt="">
+                    {% endif %}
+                    <p>{{ popular_product.name }}</p>
+                    <p class="product-button">{{ popular_product.price }} p.</p>
+                </a>
+            {% endfor %}
+        </div>
+    </div>
+    <div class="more">
+        <h2 class="more-title">Наше меню</h2>
+        <a class="product-button" href="{% url 'products_list' %}">Посмотреть все</a>
+    </div>
+{% endblock %}
